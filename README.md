@@ -1,62 +1,68 @@
-# chat-sphere
+Certainly! Here's a template for a README file for your package "date-snap":
 
-chat-sphere is a Node.js package that provides a backend server for real-time chat applications using Express.js and Socket.IO.
+---
+
+# date-snap
+
+date-snap is a lightweight npm package that provides simple and intuitive date and time utilities for JavaScript applications. It aims to simplify common tasks related to parsing, formatting, and manipulating dates and times, making it easier for developers to work with date and time values in their projects.
+
+## Features
+
+- **Parsing:** Parse date/time strings into JavaScript Date objects effortlessly.
+- **Formatting:** Format JavaScript Date objects into custom date/time strings with ease.
+- **Manipulation:** Perform operations like adding/subtracting days, months, years, etc., with simplicity.
+- **Comparison:** Easily compare two date/time values with intuitive functions.
+- **Timezone Conversion:** Convert between different timezones seamlessly.
+- **Duration Calculation:** Calculate the duration between two date/time values effortlessly.
+- **Validation:** Validate whether a given string is a valid date/time with ease.
 
 ## Installation
 
-You can install the chat-sphere package via npm or yarn:
+You can install date-snap via npm:
 
 ```bash
-npm install chat-sphere
-```
-
-or
-
-```bash
-yarn add chat-sphere
+npm install date-snap
 ```
 
 ## Usage
 
-To use chat-sphere in your Node.js application, you can import the chat-sphere class and start the server:
-
 ```javascript
-const chat-sphere = require('chat-sphere');
+const { parse, format, addDays, isSame, convertToTimeZone, durationBetween, isValid } = require('date-snap');
 
-const chatServer = new chat_sphere();
-const port = 3000; // Choose any available port
+// Parsing
+const date = parse('2024-04-02');
+console.log(date);
 
-chatServer.start(port);
+// Formatting
+const formattedDate = format(date, 'YYYY-MM-DD');
+console.log(formattedDate);
+
+// Manipulation
+const newDate = addDays(date, 7);
+console.log(newDate);
+
+// Comparison
+const isSameDate = isSame(date, newDate, 'day');
+console.log(isSameDate);
+
+// Timezone Conversion
+const convertedDate = convertToTimeZone(date, 'America/New_York');
+console.log(convertedDate);
+
+// Duration Calculation
+const duration = durationBetween(date, newDate);
+console.log(duration);
+
+// Validation
+const isValidDate = isValid('2024-02-30', 'YYYY-MM-DD');
+console.log(isValidDate);
 ```
 
-Once the server is running, your clients can connect to it using Socket.IO on the frontend.
+## Contribution
 
-## Features
-
-- Real-time messaging: Supports real-time bidirectional messaging between clients using WebSockets.
-- Easy integration: Simple to integrate into existing Node.js applications.
-- Customizable: You can extend and customize the backend according to your requirements.
-
-## Example
-
-Here's a basic example of using chat-sphere in a Node.js application:
-
-```javascript
-const chat-sphere = require('chat-sphere');
-
-const chatServer = new chat-sphere();
-const port = 3000; // Choose any available port
-
-chatServer.start(port);
-```
-
-
+Contributions are welcome! If you have any ideas for improvements or new features, feel free to open an issue or submit a pull request on [GitHub](https://github.com/obiorachibuike/DateSnap).
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Issues
-
-If you encounter any issues or have any suggestions for improvements, please feel free to open an issue on the [GitHub repository]   https://github.com/Obiorachibuike/ChatSphere.git.
+date-snap is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
